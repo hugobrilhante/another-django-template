@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "another-django-template"
-version = "1.0.0"
+version = "1.0.1"
 description = ""
 authors = ["Hugo Brilhante <hugobrilhante@gmail.com>"]
 
