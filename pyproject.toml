@@ -16,6 +16,7 @@ psycopg2 = "~2.8.6"
 whitenoise = "~5.2.0"
 
 [tool.poetry.dev-dependencies]
+coverage = {extras = ["toml"], version = "^5.5"}
 
 [tool.black]
 line-length = 120
@@ -42,6 +43,19 @@ disable = [
     "bad-whitespace",
     "missing-module-docstring",
     "missing-class-docstring"
+]
+
+[tool.coverage.run]
+omit =[
+  "*migrations/*",
+  "*tests/*",
+  "*apps.py",
+  "*urls.py",
+  "*asgi.py",
+  "*wsgi.py",
+  "*conftest.py",
+  "*settings.py",
+  "manage.py"
 ]
 
 [tool.pylint.format]
