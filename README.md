@@ -4,7 +4,7 @@ A simple django 3.2 (LTS) project to use as a basis for other projects.
 
 ## What's better at it?
 
-I used [potrey](https://python-poetry.org/docs/cli/#new) with the `--src` option to create the base for simplicity, so I don’t need to change anything, just clone the project and use it. I added a `.pre-commit-config.yaml` with some linters to ensure code quality. I used the `django-configuration` to split the `dev` and `prod` configurations following the guidelines of [The Twelve Factor App](https://www.12factor.net).
+I used [poetry](https://python-poetry.org/docs/cli/#new) with the `--src` option to create the base for simplicity, so I don’t need to change anything, just clone the project and use it. I added a `.pre-commit-config.yaml` with some linters to ensure code quality. I used the `django-configuration` to split the `dev` and `prod` configurations following the guidelines of [The Twelve Factor App](https://www.12factor.net).
 
 ## How to use?
 
