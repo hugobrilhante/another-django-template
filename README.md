@@ -18,8 +18,6 @@ Enter the project folder and create a `.env` use` .env.example`
 
     cd my-project
     cp .env.example .env
-    
-> Edit `.env` DJANGO_ALLOWED_HOSTS=* 
 
 Build image 
     
