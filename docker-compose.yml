@@ -2,7 +2,7 @@ version: "3.9"
 services:
   app:
     build: .
-    command: [ 'dockerize', '-wait', 'tcp://db:5432', './commands.sh' ]
+    command: [ './commands.sh' ]
     volumes:
       - .:/app
     env_file:
@@ -10,12 +10,18 @@ services:
     ports:
       - "8000:8000"
     depends_on:
-      - db
+      db:
+        condition: service_healthy
   db:
     image: postgres:latest
     volumes:
       - "data:/var/lib/postgresql/data"
     env_file:
       - .env
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 volumes:
   data:
